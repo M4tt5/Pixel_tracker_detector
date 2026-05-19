@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Tracker Detector</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ───────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-logo">
+      <span class="logo-icon">👁</span>
+      <div class="header-text">
+        <span class="header-title">Pixel Tracker Detector</span>
+        <span class="header-sub">Analyse de confidentialité</span>
+      </div>
+    </div>
+    <button class="btn-scan" id="btn-scan" title="Relancer l'analyse">
+      <span class="scan-icon">↻</span>
+    </button>
+  </header>
+
+  <!-- ── ÉTAT : CHARGEMENT ────────────────────────────────── -->
+  <div class="state-loading" id="state-loading">
+    <div class="spinner"></div>
+    <p>Analyse en cours…</p>
+  </div>
+
+  <!-- ── ÉTAT : ERREUR ────────────────────────────────────── -->
+  <div class="state-error hidden" id="state-error">
+    <span class="error-icon">⚠️</span>
+    <p id="error-message">Impossible d'analyser cette page.</p>
+  </div>
+
+  <!-- ── CONTENU PRINCIPAL ────────────────────────────────── -->
+  <main class="main-content hidden" id="main-content">
+
+    <!-- Score global -->
+    <section class="score-section">
+      <div class="score-ring-wrapper">
+        <svg class="score-ring" viewBox="0 0 100 100">
+          <circle class="ring-bg"    cx="50" cy="50" r="42" />
+          <circle class="ring-fill"  cx="50" cy="50" r="42" id="ring-fill" />
+        </svg>
+        <div class="score-center">
+          <span class="score-value" id="score-value">0</span>
+          <span class="score-unit">/100</span>
+        </div>
+      </div>
+      <div class="score-info">
+        <span class="score-badge" id="score-badge">—</span>
+        <span class="score-label">Niveau de tracking</span>
+        <span class="score-domain" id="score-domain"></span>
+      </div>
+    </section>
+
+    <!-- Raisons du score -->
+    <section class="reasons-section" id="reasons-section">
+      <h2 class="section-title">Détails du score</h2>
+      <div class="reasons-list" id="reasons-list"></div>
+    </section>
+
+    <!-- Tabs de navigation -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="pixels">
+        🖼 Pixels <span class="tab-count" id="tab-count-pixels">0</span>
+      </button>
+      <button class="tab" data-tab="trackers">
+        🌐 Trackers <span class="tab-count" id="tab-count-trackers">0</span>
+      </button>
+      <button class="tab" data-tab="network">
+        📡 Réseau <span class="tab-count" id="tab-count-network">0</span>
+      </button>
+      <button class="tab" data-tab="fingerprint">
+        🔍 Fingerprint <span class="tab-count" id="tab-count-fingerprint">0</span>
+      </button>
+    </nav>
+
+    <!-- Panels -->
+    <div class="tab-panels">
+
+      <!-- Panel : Pixels -->
+      <div class="tab-panel active" id="panel-pixels">
+        <div class="panel-empty hidden" id="empty-pixels">
+          <span>✅</span>
+          <p>Aucune image pixel détectée</p>
+        </div>
+        <div class="items-list" id="list-pixels"></div>
+      </div>
+
+      <!-- Panel : Trackers connus -->
+      <div class="tab-panel hidden" id="panel-trackers">
+        <div class="panel-empty hidden" id="empty-trackers">
+          <span>✅</span>
+          <p>Aucun domaine tracker connu</p>
+        </div>
+        <div class="items-list" id="list-trackers"></div>
+      </div>
+
+      <!-- Panel : Réseau -->
+      <div class="tab-panel hidden" id="panel-network">
+        <div class="panel-empty hidden" id="empty-network">
+          <span>✅</span>
+          <p>Aucune requête suspecte</p>
+        </div>
+        <div class="items-list" id="list-network"></div>
+      </div>
+
+      <!-- Panel : Fingerprinting -->
+      <div class="tab-panel hidden" id="panel-fingerprint">
+        <div class="panel-empty hidden" id="empty-fingerprint">
+          <span>✅</span>
+          <p>Aucun signal de fingerprinting</p>
+        </div>
+        <div class="items-list" id="list-fingerprint"></div>
+      </div>
+
+    </div><!-- /.tab-panels -->
+
+  </main><!-- /#main-content -->
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <span class="footer-text">Pixel Tracker Detector — Portfolio Project</span>
+    <a class="footer-link" href="https://github.com" target="_blank">GitHub ↗</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
