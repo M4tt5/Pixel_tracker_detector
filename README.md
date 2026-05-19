@@ -1,4 +1,4 @@
-# 👁 Pixel Tracker Detector
+# Pixel Tracker Detector
 
 > Extension Chrome (Manifest V3) de détection des pixels trackers, requêtes réseau suspectes et techniques de fingerprinting.  
 > **Projet de portfolio – Cybersécurité / Développement logiciel**
@@ -9,7 +9,7 @@
 
 ---
 
-## 📸 Aperçu
+## Aperçu
 
 L'extension analyse en temps réel chaque page visitée et fournit :
 - Un **score de tracking 0–100** avec classification Faible / Moyen / Élevé
@@ -20,7 +20,7 @@ L'extension analyse en temps réel chaque page visitée et fournit :
 
 ---
 
-## 🗂 Architecture du projet
+## Architecture du projet
 
 ```
 pixel-tracker-detector/
@@ -54,7 +54,7 @@ pixel-tracker-detector/
 
 ---
 
-## 🔬 Comment fonctionne la détection
+## Comment fonctionne la détection
 
 ### V0 — Détection DOM
 
@@ -124,7 +124,7 @@ Détection par analyse des scripts inline via regex :
 
 ---
 
-## ⚠️ Limites et faux positifs
+## Limites et faux positifs
 
 ### Limites techniques
 
@@ -145,7 +145,7 @@ Détection par analyse des scripts inline via regex :
 
 ---
 
-## 🚀 Installation (développement)
+## Installation
 
 ```bash
 # 1. Cloner le repo
@@ -165,7 +165,7 @@ python3 generate_icons.py
 
 ---
 
-## 🏗 Évolutions possibles (niveau portfolio avancé)
+## Évolutions possibles
 
 ### Technique
 - [ ] **Bundler (esbuild/Rollup)** : permettre les vrais imports ES modules entre content/background
@@ -189,7 +189,7 @@ python3 generate_icons.py
 
 ---
 
-## 📚 Ressources et références
+## Ressources et références
 
 - [Chrome Extensions MV3 – Migration Guide](https://developer.chrome.com/docs/extensions/mv3/intro/)
 - [webRequest API](https://developer.chrome.com/docs/extensions/reference/webRequest/)
@@ -199,7 +199,7 @@ python3 generate_icons.py
 
 ---
 
-## 👤 Auteur
+## Auteur
 
-Projet de portfolio – Cybersécurité / IoT / Développement logiciel  
+DAVIAUD Matthis 
 Licence MIT — libre d'utilisation et de modification.
